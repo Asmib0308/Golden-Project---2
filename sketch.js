@@ -31,8 +31,8 @@ function setup(){
   canvas = createCanvas(windowWidth, windowHeight);
   db = firebase.firestore()
   form = new Form()
-
-  title = createSprite(windowWidth/2 + 20 , windowHeight/2 - 250)
+  
+  title = createSprite(windowWidth/2 + 20 , windowHeight/2 - 230)
   title.addImage(titleI)
   title.scale = 1.8;
   
@@ -55,7 +55,6 @@ function setup(){
   movie = createSprite(windowWidth/2 + 135 , windowHeight/2 - 90)
   movie.addImage(movieI)
   movie.scale = 0.45;
-
   
 }
 
