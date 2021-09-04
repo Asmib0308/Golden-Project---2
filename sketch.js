@@ -56,7 +56,11 @@ function setup(){
   movie.addImage(movieI)
   movie.scale = 0.45;
 
-  
+  if (gameState === 0){
+    form.display()
+    line(width/2, height/2 - 230, width/2, height/2)
+    line(width/2 - 280, height/2 - 120, width/2 + 320, height/2 - 120)
+   }  
 }
 
 
@@ -69,39 +73,29 @@ function draw(){
   fill(204, 36, 117)
   text("Bolly coins : " + points,width/2 + 570, height/2 - 360)
   
-  if (gameState === 0){
-    form.display()
-    line(width/2, height/2 - 220, width/2, height/2 - 30)
-    line(width/2 - 270, height/2 - 120, width/2 + 310, height/2 - 120)
-  }  
-
   if(gameState === 1 ){
     form.hide()
     form2.display()
     form2.getDataHints()
-    form2.displayQuestions()    
+    form2.displayQuestions()
   }
 
   if (answerFlag === 4){
     answerFlag = 0;
     reset();
   }
-
   if(playerExists === false){
     db.collection("Players").add({email:form.input.value(),q_id:qid})
     playerExists = true
   }
-
   drawSprites();
 }
-
 function reset(){
   form2.show();
   points += 20;
   qid += 1;
   form2.clickFlag = 0
 }
-
 function keyPressed(){
   if(keyCode === 13 && gameState === 0){
     userId = form.input.value()
@@ -119,8 +113,8 @@ function keyPressed(){
       alert('enter email to continue')
     }
   }
-}
 
+}
 async  function checkPlayer(id){ 
   
   //Reading players from database to check if a player already exists
@@ -149,7 +143,6 @@ async  function checkPlayer(id){
     }
   })
 }
-
 async function addPlayer(){
     //Adding a player
     if(playerExists === false){
