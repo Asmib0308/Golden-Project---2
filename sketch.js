@@ -57,9 +57,7 @@ function setup(){
   movie.scale = 0.45;
 
   if (gameState === 0){
-    form.display()
-    line(width/2, height/2 - 230, width/2, height/2)
-    line(width/2 - 280, height/2 - 120, width/2 + 320, height/2 - 120)
+    form.display()    
    }  
 }
 
@@ -72,6 +70,11 @@ function draw(){
   strokeWeight(1)
   fill(204, 36, 117)
   text("Bolly coins : " + points,width/2 + 570, height/2 - 360)
+  
+   if (gameState === 0){
+    line(windowWidth/2, windowHeight/2 - 200, windowWidth/2, windowHeight/2 - 30)
+    line(windowWidth/2 - 250, windowHeight/2 - 120, windowWidth/2 + 290, windowHeight/2 - 120)
+   }  
   
   if(gameState === 1 ){
     form.hide()
