@@ -36,7 +36,7 @@ function setup(){
   title.addImage(titleI)
   title.scale = 1.8;
   
-  guru = createSprite(windowWidth/2 - 350 , windowHeight/2 - 80)
+  guru = createSprite(windowWidth/2 - 250 , windowHeight/2 - 80)
   guru.addImage(guruI)
   guru.scale = 1.6;
   
