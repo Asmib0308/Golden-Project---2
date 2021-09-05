@@ -69,7 +69,7 @@ function draw(){
   stroke(204, 36, 117)
   strokeWeight(1)
   fill(204, 36, 117)
-  text("Bolly coins : " + points,width/2 + 570, height/2 - 360)
+  text("Bolly coins : " + points,windowWwidth/2 + 550, windowHeight/2 - 200)
   
    if (gameState === 0){
     line(windowWidth/2, windowHeight/2 - 200, windowWidth/2, windowHeight/2 - 30)
